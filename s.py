@@ -4,17 +4,13 @@ import numpy as np
 import pickle
 import sklearn
 
-
-
 # title
 st.title('🚖 Uber Fare Prediction and Streamlit Web Application 🌐')
-
 
 # Load data
 df = pd.read_csv('Clean_data.csv')
 scale = pd.read_pickle('scale.pkl')
 model = pd.read_pickle('model.pkl')
-
 
 def Problem_Statement():
     st.header("📝 Problem Statement")
@@ -105,16 +101,6 @@ def Conclusion():
     st.write("Developed a predictive model for Uber fares and a Streamlit app for user estimates. 🎯")
     st.write("Deployed on AWS, showcasing skills in data preprocessing, machine learning, and web application development. 🚀")
 
-def about_the_developer():
-    st.header("🔍 About the Developer")
-    st.subheader("📬 Contact Details")
-    st.write("Name : Sethumadhavan V")
-    st.write("Email: [sethumadhavanvelu2002@example.com](mailto:sethumadhavanvelu2002@example.com)")
-    st.write("Phone: 📞 9159299878")
-    st.write("[LinkedIn ID](https://www.linkedin.com/in/sethumadhavan-v-b84890257/)")
-    st.write("[GitHub Profile](https://github.com/SETHU0010/Uber_Fare_Prediction_and_Streamlit_Web_Application)")
-
-
 def main():
     # Main layout with two columns
     col1, col2 = st.columns(2)
@@ -124,8 +110,7 @@ def main():
         options = [
             "Problem Statement", "Objective", "Domain", "Approach", "Workflow", 
             "Prerequisites", "Required Python Libraries", "Dataset", "Features", 
-            "Skills Take Away From This Project", "Results", "Conclusion", 
-            "About the Developer"
+            "Skills Take Away From This Project", "Results", "Conclusion"
         ]
         choice = st.radio("Go to", options)
 
@@ -154,8 +139,6 @@ def main():
             Result()
         elif choice == "Conclusion":
             Conclusion()
-        elif choice == "About the Developer":
-            about_the_developer()
 
 if __name__ == "__main__":
     main()
